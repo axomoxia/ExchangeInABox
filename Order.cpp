@@ -1,10 +1,19 @@
 #include "Order.hpp"
 
- Order::Order(const std::string& orderID, const std::string& instrument, const unsigned long volume, const double price,OrderSide orderSide) :
-        orderID_(orderID),
+  Order::Order(const std::string& clientOrderID, 
+          const std::string& instrument, 
+          const std::string& principle,
+          const unsigned long volume, 
+          const int price, 
+          const int multiplier, 
+          const OrderSide orderSide) : 
+        
+        clientOrderID_(clientOrderID),
         instrument_(instrument),
-        volume_(volume),
+       principle_(principle),
+        initialVolume_(volume),
         price_(price),
+        multiplier_(multiplier),
         orderSide_(orderSide)
     
 {
